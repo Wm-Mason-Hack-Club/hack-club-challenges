@@ -4,6 +4,7 @@ vols/
 # pycache for python
 __pycache__/
 
-# don't ignore .env file
-# --> there is an .env.example file to copy and fill with your own values
+# ignore .env file
 .env
+# --> there is an .env.example file to copy and fill with your own values
+!.env.example
