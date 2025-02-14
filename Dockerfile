@@ -18,10 +18,16 @@ COPY project/ .
 # Install the Python extension for VS Code
 RUN code-server --install-extension ms-python.python
 
+# Set permissions for the project directory
+RUN sudo chmod -R 777 .
+
 # setup a virtual environment, so students can install packages without sudo
 RUN python3 -m venv venv
 RUN . venv/bin/activate
 
 # install the requirements for this particular project
-# and open the workspace to the app folder, where we put all the project files
-CMD ["pip install -r requirements.txt", "code-server --bind-addr 0.0.0.0:8080 /app"]
+# RUN pip install -r requirements.txt
+# RUN /bin/bash -c "pip install -r requirements.txt"
+
+# Open the workspace to the app folder, where we put all the project files
+# CMD ["pip install -r requirements.txt"]
