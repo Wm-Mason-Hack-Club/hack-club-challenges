@@ -19,4 +19,4 @@ The defaults here are configured for [Python](https://www.python.org/) based pro
 ## Read More
 For more information about how different people will use this resource:
 - [Session Administrator Guidance](ADMIN.md)
-- [Student/ User Guidance](STUDENT.md)
+- [Student/ User Guidance](USE-GUIDE.md)
