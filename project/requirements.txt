@@ -1,0 +1,18 @@
+## This will pre-install `pip` packages for the project, if there are any...
+# -----------------------------------------------------
+# to do this manually, run the following command:
+# pip install -r requirements.txt
+# -----------------------------------------------------
+# to store any new requirements, run the following command:
+# pip freeze > requirements.txt
+# -----------------------------------------------------
+# to install a new package, run the following command:
+# pip install <package-name>
+# -----------------------------------------------------
+# to uninstall a package, run the following command:
+# pip uninstall <package-name>
+# -----------------------------------------------------
+# to upgrade a package, run the following command:
+# pip install --upgrade <package-name>
+# -----------------------------------------------------
+
