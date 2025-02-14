@@ -14,6 +14,7 @@ RUN sudo apt-get update && \
 # Copy the project files into the container
 # --> includes the requirements.txt file and pre-written code
 COPY project/ .
+COPY USE-GUIDE.md .
 
 # Install the Python extension for VS Code
 RUN code-server --install-extension ms-python.python
