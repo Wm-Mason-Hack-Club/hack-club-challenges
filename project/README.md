@@ -43,6 +43,8 @@ pip allows you to install and manage additional libraries and dependencies that 
         ```sh 
         source venv/bin/activate
         ```
+> [!TIP]
+> It can take up to a minute for the `(venv)` marker to show up in your terminal, when you first login. 
 ****
 2. **Install Packages**:
 Packages in Python are collections of modules that provide additional functionality and tools to help you build your projects more efficiently. Instead of writing everything from scratch, you can use these pre-built packages to save time and avoid reinventing the wheel.
@@ -51,13 +53,10 @@ Packages in Python are collections of modules that provide additional functional
 
     If you want to save your packages in the `requirements.txt` file, use this command: `pip freeze > requirements.txt` To install items in the requirements file, use this command: `pip install -r requirements.txt`
 
-    > [!TIP] 
-    > You may need to install the required Python packages for this project, depending on the configuration.
-    >
-    > run the command:  `pip install -r requirements.txt`
-    >
-    > It doesn't hurt anything to run that command just-in-case.
-
+> [!NOTE] 
+> If you don't think the packages loaded, you can check what is installed by running: `pip list`.
+>
+> Install any missing items by running the command:  `pip install -r requirements.txt` (it wont hurt to run this one, either way).
 
 *****
 3. **Create a Simple Script**:
