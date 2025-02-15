@@ -4,7 +4,6 @@ FROM codercom/code-server:latest
 WORKDIR /home/coder/app
 
 # Install Python 3 (whatever version is available in the base image)
-# --> encourage students to use `python3` and `pip3` to avoid confusion
 # --> encourage students to run `python3 --version` to check their versions
 RUN sudo apt-get update && \
     sudo apt-get upgrade -y && \
