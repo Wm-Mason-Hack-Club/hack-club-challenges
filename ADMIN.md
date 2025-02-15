@@ -18,12 +18,14 @@ In this example, the group1 directory on the host is mounted to /home/coder/proj
 ```yaml
 services:
   group1:
+    hostname: group1 # used in bash-prompt, as group-name
     build:
       context: .
       dockerfile: Dockerfile
-    restart: no
+    # teams *may* crash the container, if they aren't careful
+    restart: no # default 
     ports:
-      - "3001:8080"
+      - "3001:8080" # 300x number is the port for this group
     environment:
       - PASSWORD=${PASSWORD_GROUP1}
     volumes:
@@ -38,12 +40,14 @@ In this example, a Docker volume named group1_data is created and mounted to /ho
 ```yaml
 services:
   group1:
+    hostname: group1 # used in bash-prompt, as group-name
     build:
       context: .
       dockerfile: Dockerfile
-    restart: no
+    # teams *may* crash the container, if they aren't careful
+    restart: no # default 
     ports:
-      - "3001:8080"
+      - "3001:8080" # 300x number is the port for this group
     environment:
       - PASSWORD=${PASSWORD_GROUP1}
     volumes:
@@ -62,9 +66,11 @@ You can switch between these options by modifying your docker-compose.yaml file 
 ```dockerfile
 FROM codercom/code-server:latest
 
-WORKDIR /app
+# Set the working directory to the app folder
+WORKDIR /home/coder/app
 
 # Install Python 3 (whatever version is available in the base image)
+# --> encourage students to run `python3 --version` to check their versions
 RUN sudo apt-get update && \
     sudo apt-get upgrade -y && \
     sudo apt-get install -y python3 && \
@@ -72,23 +78,28 @@ RUN sudo apt-get update && \
     sudo apt-get install -y python3-venv
 
 # Copy the project files into the container
-COPY project/ /home/coder/project
-
-# Install the Python extension for VS Code
-RUN code-server --install-extension ms-python.python
+COPY project/ . 
+COPY USE-GUIDE.md .
 
 # Set permissions for the project directory
-RUN sudo chmod -R 777 /home/coder/project
+RUN sudo chmod -R 777 .
 
-# setup a virtual environment, so students can install packages without sudo
+# Copy the .bashrc file into the home directory
+COPY .bashrc /home/coder/.bashrc
+
+# Copy the VS Code settings file to enable dark mode and other settings
+COPY settings.json /home/coder/.local/share/code-server/User/settings.json
+
+# Install the Python extension for VS Code
+RUN sudo chmod -R 777 /home/coder/.local/share/code-server/ && \
+    code-server --install-extension ms-python.python
+
+# setup a virtual environment, so students can install packages without `sudo`
 RUN python3 -m venv venv
-RUN . venv/bin/activate
 
-# install the requirements for this particular project
-RUN pip install -r /home/coder/project/requirements.txt
-
-# Start code-server with the /app directory as the workspace
-CMD ["code-server", "--bind-addr", "0.0.0.0:8080", "/home/coder/project"]
+# Activate the virtual environment, and install any dependencies
+RUN . venv/bin/activate && \
+    pip install -r requirements.txt
 ```
 
 
