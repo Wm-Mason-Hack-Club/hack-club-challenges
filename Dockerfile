@@ -22,6 +22,9 @@ RUN sudo chmod -R 777 .
 # Copy the .bashrc file into the home directory
 COPY .bashrc /home/coder/.bashrc
 
+# Copy the VS Code settings file to enable dark mode and other settings
+COPY settings.json /home/coder/.local/share/code-server/User/settings.json
+
 # Install the Python extension for VS Code
 RUN sudo chmod -R 777 /home/coder/.local/share/code-server/ && \
     code-server --install-extension ms-python.python
