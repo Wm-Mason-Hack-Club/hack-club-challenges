@@ -1,4 +1,11 @@
 # Administration of Code-Servers
+These are notes and links that may be helpful for any person acting as an administrator, running these containers for students to use. 
+
+## Setup and Config from Coder
+- [code-server main page](https://coder.com/)
+- [code-server github page](https://github.com/coder/code-server)
+- [code-server guide](https://coder.com/docs/code-server/guide)
+
 
 ## Entering Starter Data into Code Servers
 To handle different scenarios where you either want to start a container with code in the /projects folder or use a volume to persist data, you can use Docker volumes and bind mounts. Here are your options and how to set them up properly:
