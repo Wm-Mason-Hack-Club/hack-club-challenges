@@ -56,7 +56,8 @@ Make sure to have this information handy before you proceed.
 3. **Running Code**:
     - Open the terminal by navigating to the menu option, clicking on the terminal icon, or using the shortcut `Ctrl+Shift+C`.
     - Run your code using the appropriate command for your programming language (e.g., `python3 script.py` for Python).
-> [!WARNING] Each user's terminal is separate, but uses shared resources within the container. You will want to coordinate with your team to balance and coordinate actions.
+> [!WARNING] 
+> Each user's terminal is separate, but uses shared resources within the container. You will want to coordinate with your team to balance and coordinate actions.
 
 4. **Saving Changes**:
     - Changes to the documents should happen automatically, but you can manually force file saves with the hotkey combo: `Ctrl+S`.
