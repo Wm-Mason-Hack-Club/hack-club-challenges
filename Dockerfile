@@ -1,5 +1,6 @@
 FROM codercom/code-server:latest
 
+# Set the working directory to the app folder
 WORKDIR /home/coder/app
 
 # Install Python 3 (whatever version is available in the base image)
@@ -19,7 +20,8 @@ COPY USE-GUIDE.md .
 RUN sudo chmod -R 777 .
 
 # Install the Python extension for VS Code
-RUN code-server --install-extension ms-python.python
+RUN sudo chmod -R 777 /home/coder/.local/share/code-server/ && \
+    code-server --install-extension ms-python.python
 
 # setup a virtual environment, so students can install packages without `sudo`
 RUN python3 -m venv venv
