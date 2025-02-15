@@ -1,0 +1,12 @@
+# don't send the virtual environment to the docker container
+# --> we want the container to create its own virtual environment
+# -------------------------------------------------------------------
+
+# the virtual environment in the project directory
+project/venv/ 
+
+# the virtual environment in the main directory
+venv/
+
+# any virtual environment, anywhere... (just-in-case)
+**/venv/
