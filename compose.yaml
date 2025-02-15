@@ -1,51 +1,40 @@
 services:
-  # Group 1
   group1:
     build:
       context: .
       dockerfile: Dockerfile
     # teams *may* crash the container, if they aren't careful
     restart: no # default 
-    # the 300x number will be the port for this group
     ports:
-      - "3001:8080"
+      - "3001:8080" # 300x number is the port for this group
     environment:
       - PASSWORD=${PASSWORD_GROUP1}
 
-  # Group 2
   group2:
     build:
       context: .
       dockerfile: Dockerfile
-    # teams *may* crash the container, if they aren't careful
-    restart: no # default 
-    # the 300x number will be the port for this group
+    restart: no
     ports:
       - "3002:8080"
     environment:
       - PASSWORD=${PASSWORD_GROUP2}
 
-  # Group 3
   group3:
     build:
       context: .
       dockerfile: Dockerfile
-    # teams *may* crash the container, if they aren't careful
-    restart: no # default 
-    # the 300x number will be the port for this group
+    restart: no
     ports:
       - "3003:8080"
     environment:
       - PASSWORD=${PASSWORD_GROUP3}
   
-  # Group 4
   group4:
     build:
       context: .
       dockerfile: Dockerfile
-    # teams *may* crash the container, if they aren't careful
-    restart: no # default 
-    # the 300x number will be the port for this group
+    restart: no
     ports:
       - "3004:8080"
     environment:
