@@ -19,6 +19,9 @@ COPY USE-GUIDE.md .
 # Set permissions for the project directory
 RUN sudo chmod -R 777 .
 
+# Copy the .bashrc file into the home directory
+COPY .bashrc /home/coder/.bashrc
+
 # Install the Python extension for VS Code
 RUN sudo chmod -R 777 /home/coder/.local/share/code-server/ && \
     code-server --install-extension ms-python.python

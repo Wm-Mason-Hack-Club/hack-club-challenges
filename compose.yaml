@@ -1,5 +1,6 @@
 services:
   group1:
+    hostname: group1 # used in bash-prompt, as group-name
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,6 +12,7 @@ services:
       - PASSWORD=${PASSWORD_GROUP1}
 
   group2:
+    hostname: group2
     build:
       context: .
       dockerfile: Dockerfile
@@ -21,6 +23,7 @@ services:
       - PASSWORD=${PASSWORD_GROUP2}
 
   group3:
+    hostname: group3
     build:
       context: .
       dockerfile: Dockerfile
@@ -31,6 +34,7 @@ services:
       - PASSWORD=${PASSWORD_GROUP3}
   
   group4:
+    hostname: group4
     build:
       context: .
       dockerfile: Dockerfile
