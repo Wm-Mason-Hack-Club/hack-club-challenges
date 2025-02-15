@@ -54,7 +54,7 @@ Make sure to have this information handy before you proceed.
     - Use the syntax highlighting and IntelliSense features to help you write code efficiently.
 
 3. **Running Code**:
-    - Open the terminal by navigating to the menu option, clicking on the terminal icon, or using the shortcut `Ctrl+' `(backtick).
+    - Open the terminal by navigating to the menu option, clicking on the terminal icon, or using the shortcut `Ctrl+Shift+C`.
     - Run your code using the appropriate command for your programming language (e.g., `python3 script.py` for Python).
 > [!WARNING] Each user's terminal is separate, but uses shared resources within the container. You will want to coordinate with your team to balance and coordinate actions.
 
