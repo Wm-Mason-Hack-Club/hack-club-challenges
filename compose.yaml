@@ -10,11 +10,11 @@ services:
       - "3001:8080" # 300x number is the port for this group
     environment:
       - PASSWORD=${PASSWORD_GROUP1}
-    deploy:
-      resources:
-        limits:
-          cpus: '1.25' # Limit to 1.25 CPU cores
-          memory: 1024M # Limit to 1GB of memory
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '2' # Limit to 2 CPU cores
+    #       memory: 2G # Limit to 2GB of memory
 
   group2:
     hostname: group2
@@ -26,11 +26,6 @@ services:
       - "3002:8080"
     environment:
       - PASSWORD=${PASSWORD_GROUP2}
-    deploy:
-      resources:
-        limits:
-          cpus: '1.25'
-          memory: 1024M
 
   group3:
     hostname: group3
@@ -42,11 +37,6 @@ services:
       - "3003:8080"
     environment:
       - PASSWORD=${PASSWORD_GROUP3}
-    deploy:
-      resources:
-        limits:
-          cpus: '1.25'
-          memory: 1024M
   
   group4:
     hostname: group4
@@ -58,8 +48,3 @@ services:
       - "3004:8080"
     environment:
     - PASSWORD=${PASSWORD_GROUP4}
-    deploy:
-      resources:
-        limits:
-          cpus: '1.25'
-          memory: 1024M
